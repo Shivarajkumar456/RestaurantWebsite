@@ -1,7 +1,12 @@
+import React, {Fragment} from "react";
 import MealsSummary from "./MealSummary";
+import AvailableMeals from "./AvailabaleMeals";
 
 const Meals = (props) => {
-    return <MealsSummary />
+    return (<Fragment>
+    <MealsSummary />
+    <AvailableMeals />
+    </Fragment>)
 }
 
 export default Meals;
