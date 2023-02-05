@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Meals from './Components/Meals/Meals';
 import Header from './Components/Layouts/Header';
 import Cart from './Components/Cart/Cart';
+import CartProvider from './store/cartProvider';
 
 function App() {
   const [isClicked, setIsClicked] = useState(false);
@@ -12,13 +13,13 @@ function App() {
     setIsClicked(false);
   }
   return (
-    <React.Fragment>
+    <CartProvider>
       {isClicked && <Cart onClose={closeHandler}/>}
       <Header onShow={clickHandler}/>
       <main>
       <Meals />
       </main>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
